@@ -50,7 +50,7 @@ async fn create_user(Json(payload): Json<User>) -> impl IntoResponse {
 
 async fn connect() -> Result<Client, Box<dyn Error>> {
     // Load the MongoDB connection string from an environment variable:
-    let client_uri = env::var("MONGODB_URI").expect("You must set the MONGODB_URI environment var!");
+    let client_uri = env::var("MONGODB_URI").expect("You must set the MONGODB_URI environment variable!");
     // A Client is needed to connect to MongoDB:
     // An extra line of code to work around a DNS issue on Windows:
     let options =
